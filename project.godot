@@ -12,11 +12,10 @@ config_version=5
 
 config/name="Trying to colab"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://colnnocane07m"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [rendering]

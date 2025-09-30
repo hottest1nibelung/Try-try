@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxe6xcp582ycg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k1fc8"]
+
+[node name="Harta Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 422.0
+offset_top = 19.0
+offset_right = 590.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "Amalia, tu esti asta :D"
+label_settings = SubResource("LabelSettings_k1fc8")
+horizontal_alignment = 1

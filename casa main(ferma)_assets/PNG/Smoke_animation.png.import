@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ql888gjrs6tw"
-path="res://.godot/imported/Earth.jpeg-272f0fc3b2c557f772ecd3f62ea7a13d.ctex"
+uid="uid://cnwrkp782fyv6"
+path="res://.godot/imported/Smoke_animation.png-2c2148dfd58f0264cc168f871f7527d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Main menu/Earth.jpeg"
-dest_files=["res://.godot/imported/Earth.jpeg-272f0fc3b2c557f772ecd3f62ea7a13d.ctex"]
+source_file="res://casa main(ferma)_assets/PNG/Smoke_animation.png"
+dest_files=["res://.godot/imported/Smoke_animation.png-2c2148dfd58f0264cc168f871f7527d3.ctex"]
 
 [params]
 

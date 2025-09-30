@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://be348s2e4lf56"]
+
+[ext_resource type="LabelSettings" uid="uid://cqr1j56bdwl81" path="res://scenes/masterVolume.tres" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://x8oprk2l4eyt" path="res://UI/ui.gd" id="1_yev5y"]
+[ext_resource type="Script" uid="uid://r3lhs2uptuse" path="res://UI/options_menu.gd" id="2_wm3ai"]
+[ext_resource type="FontFile" uid="uid://bmafd845y1gm" path="res://Main menu/MorrisRomanBlack.ttf" id="2_yev5y"]
+[ext_resource type="AudioStream" uid="uid://dotuc5yrknkp" path="res://UI/time_for_adventure.mp3" id="4_gdt2y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
+font = ExtResource("2_yev5y")
+font_size = 100
+font_color = Color(0.8156863, 0.8156863, 0.6431373, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.56676835, 0.5989351, 0.07079228, 0)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yev5y")
+metadata/_edit_lock_ = true
+
+[node name="ReturnButt" type="Button" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 14.0
+offset_right = 1134.0
+offset_bottom = 45.0
+text = "Return to the farm
+"
+
+[node name="OptionsButt" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 51.0
+offset_right = 1134.0
+offset_bottom = 82.0
+text = "Options
+"
+
+[node name="OptionsMenu" type="CanvasLayer" parent="."]
+script = ExtResource("2_wm3ai")
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -200.0
+offset_right = 165.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14509805, 0.53333336, 0.14509805, 1)
+
+[node name="MVSlider" type="HSlider" parent="OptionsMenu"]
+offset_left = 438.0
+offset_top = 216.0
+offset_right = 705.0
+offset_bottom = 297.0
+max_value = 1.0
+step = 0.001
+value = 0.5
+
+[node name="MasterVolumeLabel" type="Label" parent="OptionsMenu"]
+offset_left = 445.0
+offset_top = 212.0
+offset_right = 567.0
+offset_bottom = 235.0
+text = "Master Volume:"
+label_settings = ExtResource("1_x4jx1")
+
+[node name="EVSlider" type="HSlider" parent="OptionsMenu"]
+offset_left = 438.0
+offset_top = 317.0
+offset_right = 705.0
+offset_bottom = 398.0
+
+[node name="Label2" type="Label" parent="OptionsMenu"]
+offset_left = 445.0
+offset_top = 313.0
+offset_right = 567.0
+offset_bottom = 336.0
+text = "Effects Volume:
+"
+label_settings = SubResource("LabelSettings_gdt2y")
+
+[node name="Title" type="Label" parent="OptionsMenu"]
+offset_left = 429.0
+offset_top = 128.0
+offset_right = 722.0
+offset_bottom = 215.0
+text = "Options"
+label_settings = SubResource("LabelSettings_wm3ai")
+
+[node name="CloseOptionsButt" type="Button" parent="OptionsMenu"]
+offset_left = 540.0
+offset_top = 438.0
+offset_right = 590.0
+offset_bottom = 469.0
+text = "Close"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="OptionsMenu"]
+stream = ExtResource("4_gdt2y")
+
+[connection signal="pressed" from="OptionsButt" to="." method="_on_options_butt_pressed"]
+[connection signal="value_changed" from="OptionsMenu/MVSlider" to="OptionsMenu" method="_on_mv_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/CloseOptionsButt" to="." method="_on_close_options_butt_pressed"]

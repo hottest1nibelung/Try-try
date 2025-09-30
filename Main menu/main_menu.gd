@@ -1,17 +1,20 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
+const EASE_LIGHT = 0.01
 func _ready() -> void:
-	var bg = TextureRect.new()
-	bg.texture = preload("res://Main menu/Earth.jpeg")
-	bg.stretch_mode = TextureRect.STRETCH_SCALE
-	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	bg.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	bg.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	add_child(bg)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	var difference = get_global_mouse_position() - $PointLight2D.global_position
+	$PointLight2D.global_position += difference * EASE_LIGHT
+
+
+func _on_play_butt_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/harta_main.tscn")
+
+
+func _on_exit_game_butt_pressed() -> void:
+	get_tree().quit()

@@ -5,7 +5,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$AudioStreamPlayer2D.volume_db = linear_to_db(MVSlider.value)
 	$AudioStreamPlayer2D.finished.connect(_on_Audio_Finished)
-	$AudioStreamPlayer2D.play(38)
+	$AudioStreamPlayer2D.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

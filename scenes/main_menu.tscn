@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bn0acvq677hoc"]
+[gd_scene load_steps=8 format=3 uid="uid://bn0acvq677hoc"]
 
 [ext_resource type="Script" uid="uid://ktmuvfjgc8ti" path="res://Main menu/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://bmafd845y1gm" path="res://Main menu/MorrisRomanBlack.ttf" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://by42lxb8h42bt" path="res://Main menu/ChatGPT Image Sep 30, 2025, 07_51_57 PM.png" id="3_wu84c"]
-[ext_resource type="LabelSettings" uid="uid://xn2g6mywq358" path="res://scenes/main_menu.tres" id="4_wu84c"]
+[ext_resource type="LabelSettings" uid="uid://xn2g6mywq358" path="res://resources/main_menu.tres" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://nyji1lpleb6u" path="res://scenes/pasare.tscn" id="5_8ln24"]
 
 [sub_resource type="Gradient" id="Gradient_bqqt6"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -66,17 +67,6 @@ theme_override_font_sizes/font_size = 50
 text = "Play
 "
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-z_index = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 99.0
-offset_bottom = 143.0
-grow_horizontal = 2
-text = "Farming SciMulator"
-label_settings = ExtResource("4_wu84c")
-horizontal_alignment = 1
-
 [node name="ExitGameButt" type="Button" parent="CanvasLayer"]
 offset_left = 847.0
 offset_top = 502.0
@@ -86,6 +76,32 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 50
 text = "Exit Game
 "
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 99.0
+offset_bottom = 186.0
+grow_horizontal = 2
+text = "Farming SciMulator"
+label_settings = ExtResource("4_wu84c")
+horizontal_alignment = 1
+
+[node name="Pasare" parent="." instance=ExtResource("5_8ln24")]
+position = Vector2(113, 275)
+
+[node name="Pasare2" parent="." instance=ExtResource("5_8ln24")]
+position = Vector2(344, 345)
+scale = Vector2(0.9587674, 1)
+frame = 15
+frame_progress = 1.0
+
+[node name="Pasare3" parent="." instance=ExtResource("5_8ln24")]
+position = Vector2(1008.00006, 396)
+scale = Vector2(0.9387931, 1)
+frame = 15
+frame_progress = 1.0
 
 [connection signal="pressed" from="CanvasLayer/PlayButt" to="." method="_on_play_butt_pressed"]
 [connection signal="pressed" from="CanvasLayer/ExitGameButt" to="." method="_on_exit_game_butt_pressed"]

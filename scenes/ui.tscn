@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://be348s2e4lf56"]
 
-[ext_resource type="LabelSettings" uid="uid://cqr1j56bdwl81" path="res://scenes/masterVolume.tres" id="1_x4jx1"]
+[ext_resource type="LabelSettings" uid="uid://cqr1j56bdwl81" path="res://resources/masterVolume.tres" id="1_x4jx1"]
 [ext_resource type="Script" uid="uid://x8oprk2l4eyt" path="res://UI/ui.gd" id="1_yev5y"]
 [ext_resource type="Script" uid="uid://r3lhs2uptuse" path="res://UI/options_menu.gd" id="2_wm3ai"]
 [ext_resource type="FontFile" uid="uid://bmafd845y1gm" path="res://Main menu/MorrisRomanBlack.ttf" id="2_yev5y"]

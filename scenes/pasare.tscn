@@ -1,74 +1,78 @@
-[gd_scene load_steps=19 format=3 uid="uid://nyji1lpleb6u"]
+[gd_scene load_steps=20 format=3 uid="uid://nyji1lpleb6u"]
 
 [ext_resource type="Texture2D" uid="uid://dow2i4wmutug1" path="res://casa main(ferma)_assets/PNG/bird_fly_animation.png" id="1_ygpux"]
+[ext_resource type="Script" uid="uid://drolkinxne28m" path="res://scripts/pasare.gd" id="2_y7i0c"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7i0c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygpux"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 0, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_epjsp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7i0c"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 64, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j64l5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_epjsp"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 128, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_62yil"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j64l5"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 192, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t13ey"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_62yil"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 256, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6b8m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t13ey"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 320, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fw3rg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6b8m"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 384, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtpqr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw3rg"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 448, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfccg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtpqr"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 512, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_axfij"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfccg"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 576, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_osbd8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_axfij"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 640, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xslx4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_osbd8"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 704, 144, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfeag"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xslx4"]
 atlas = ExtResource("1_ygpux")
 region = Rect2(0, 768, 144, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfeag"]
+atlas = ExtResource("1_ygpux")
+region = Rect2(0, 832, 144, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_423j4"]
 atlas = ExtResource("1_ygpux")
-region = Rect2(0, 832, 144, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eysun"]
-atlas = ExtResource("1_ygpux")
-region = Rect2(0, 832, 144, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gg2ug"]
-atlas = ExtResource("1_ygpux")
 region = Rect2(0, 896, 144, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5sxt"]
+atlas = ExtResource("1_ygpux")
+region = Rect2(0, 960, 144, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5sxt"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygpux")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y7i0c")
 }, {
@@ -110,26 +114,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_423j4")
-}],
-"loop": true,
-"name": &"decoleaza",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eysun")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gg2ug")
+"texture": SubResource("AtlasTexture_v5sxt")
 }],
 "loop": false,
-"name": &"zboara",
+"name": &"decoleaza",
 "speed": 5.0
 }]
 
 [node name="Pasare" type="AnimatedSprite2D"]
 position = Vector2(-1.4999995, 0)
-scale = Vector2(0.9791667, 1)
+scale = Vector2(2, 2.043)
 sprite_frames = SubResource("SpriteFrames_v5sxt")
 animation = &"decoleaza"
-frame_progress = 0.17018765
+script = ExtResource("2_y7i0c")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

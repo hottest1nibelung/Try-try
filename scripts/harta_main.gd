@@ -1,9 +1,10 @@
 extends Node2D
 
-@onready var player: Node2D = $Player
-@onready var agent: NavigationAgent2D = $Player/NavigationAgent2D
+@onready var player: Node2D = $EnvironmentalObjects
+@onready var agent: NavigationAgent2D = $EnvironmentalObjects/Player/NavigationAgent2D
 @onready var target: Node2D = $Robot_NPC
 @onready var dot_scene: PackedScene = load("res://dot/dot.tscn")
+const DISTANCE_TO_TARGET = 50
 
 # Pool of reusable dots
 var dots_pool: Array = []
@@ -22,6 +23,11 @@ func _process(delta):
 	# Draw path with dots
 	if not agent.is_target_reached():
 		draw_path()
+	
+	if player.global_position.distance_to(target.global_position) <= 100:
+		player.can_move = false
+		$Chat.show()
+		$Chat.start_wrtiting()
 
 func draw_path():
 	var path = agent.get_current_navigation_path()
@@ -58,3 +64,6 @@ func draw_path():
 	# Hide any unused dots from previous frames
 	for i in range(dot_index, dots_pool.size()):
 		dots_pool[i].hide()
+
+func open_chat():
+	pass

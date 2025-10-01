@@ -6,6 +6,8 @@ var time_spent_idle = 1
 const TIME_BEFORE_IDLE_ANIMATION = 3
 var facing_right = true
 var stopped = true
+var can_move = true
+var direction
 @onready var animation := $AnimatedSprite2D
 
 func _ready() -> void:
@@ -15,7 +17,11 @@ func _physics_process(delta: float) -> void:
 	time_spent_idle += delta
 	if int(time_spent_idle) % TIME_BEFORE_IDLE_ANIMATION == 0:
 		animation.play("idle")
-	var direction = Input.get_vector("left", "right", "up", "down")
+	
+	if can_move:
+		direction = Input.get_vector("left", "right", "up", "down")
+	else:
+		direction = Vector2.ZERO
 	if direction.x:
 		check_and_swtich_orientation(direction.x)
 	if direction:

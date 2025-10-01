@@ -14,8 +14,13 @@ config/name="Trying to colab"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://colnnocane07m"
 
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

@@ -146,7 +146,7 @@ radius = 6.4498057
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
-scale = Vector2(5, 5)
+scale = Vector2(3, 3)
 motion_mode = 1
 script = ExtResource("1_qhqgy")
 
@@ -158,3 +158,5 @@ offset = Vector2(0, -15)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.8, -1.999999)
 shape = SubResource("CircleShape2D_a38lo")
+
+[node name="Camera2D" type="Camera2D" parent="."]

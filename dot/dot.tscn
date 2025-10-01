@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://5d8hpmu1taar"]
 
-[ext_resource type="Script" uid="uid://0r3dddlo2a1w" path="res://dot.gd" id="1_syhbm"]
+[ext_resource type="Script" uid="uid://0r3dddlo2a1w" path="res://dot/dot.gd" id="1_syhbm"]
 
 [node name="Dot" type="Node2D"]
 script = ExtResource("1_syhbm")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 19.0
+offset_bottom = 19.0

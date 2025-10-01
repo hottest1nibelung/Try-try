@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7m0dqdhtj0rh"]
+
+[ext_resource type="Texture2D" uid="uid://jtgan7qnw81p" path="res://casa main(ferma)_assets/Robot_chatGPT.png" id="1_ii7h6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6xhc"]
+atlas = ExtResource("1_ii7h6")
+region = Rect2(1024, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5rad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6xhc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Robot_NPC" type="Node2D"]
+scale = Vector2(0.35, 0.35)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y5rad")
+frame_progress = 0.3545311
+offset = Vector2(0, -40)

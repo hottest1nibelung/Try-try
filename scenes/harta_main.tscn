@@ -1,26 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxe6xcp582ycg"]
+[gd_scene load_steps=8 format=3 uid="uid://dxe6xcp582ycg"]
 
 [ext_resource type="Script" uid="uid://dgf8jci3l1tpq" path="res://scripts/harta_main.gd" id="1_jcr15"]
-[ext_resource type="Texture2D" uid="uid://dbbs3doye5wri" path="res://icon.svg" id="2_tb5nx"]
+[ext_resource type="PackedScene" uid="uid://b7m0dqdhtj0rh" path="res://scenes/robot_npc.tscn" id="2_tb5nx"]
+[ext_resource type="PackedScene" uid="uid://djxdtp2xaqw6w" path="res://scenes/player.tscn" id="3_04uk7"]
+[ext_resource type="Texture2D" uid="uid://kswbg1cljubv" path="res://casa main(ferma)_assets/house.png" id="4_04uk7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_04uk7"]
-vertices = PackedVector2Array(1140.0078, 634.9922, 8, 634, 8, 22.648438, 46.757813, 16.992188, 1140.9766, 15.0078125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(46, 7, 1151, 5, 1150, 645, -2, 644, -2, 14)])
+vertices = PackedVector2Array(11.0390625, 16.960938, 1150.9297, 13.03125, 729.4531, 205.20313, 394.2578, 198.78906, 13.953125, 643.0625, 416.6875, 519.2422, 1147.0625, 649.9297, 715.5703, 511.7578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(2, 1, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1, 7, 4, 653, 1157, 660, 1161, 3), PackedVector2Array(426, 509, 405, 209, 719, 215, 706, 502)])
+
+[sub_resource type="TileSet" id="TileSet_fsv70"]
+navigation_layer_0/layers = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwfb2"]
+size = Vector2(108.5, 51)
 
 [node name="Harta Main" type="Node2D"]
 script = ExtResource("1_jcr15")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-7, -7)
 navigation_polygon = SubResource("NavigationPolygon_04uk7")
 
-[node name="Icon" type="Sprite2D" parent="NavigationRegion2D"]
-position = Vector2(191, 506)
-texture = ExtResource("2_tb5nx")
+[node name="Robot_NPC" parent="." instance=ExtResource("2_tb5nx")]
+position = Vector2(872, 154)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NavigationRegion2D/Icon"]
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_fsv70")
+format = 2
 
-[node name="Icon2" type="Sprite2D" parent="NavigationRegion2D"]
-modulate = Color(0.23753911, 0.23753914, 0.23753911, 1)
-position = Vector2(917, 262)
-texture = ExtResource("2_tb5nx")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="House" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(550, 414)
+scale = Vector2(2, 2)
+texture = ExtResource("4_04uk7")
+offset = Vector2(0, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(551, 437)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_qwfb2")
+
+[node name="Player" parent="." instance=ExtResource("3_04uk7")]
+z_as_relative = false
+position = Vector2(149, 335.00003)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+
+[node name="Timer" type="Timer" parent="Player"]

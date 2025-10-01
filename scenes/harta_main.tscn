@@ -1,21 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxe6xcp582ycg"]
+[gd_scene load_steps=4 format=3 uid="uid://dxe6xcp582ycg"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_k1fc8"]
+[ext_resource type="Script" uid="uid://dgf8jci3l1tpq" path="res://scripts/harta_main.gd" id="1_jcr15"]
+[ext_resource type="Texture2D" uid="uid://dbbs3doye5wri" path="res://icon.svg" id="2_tb5nx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_04uk7"]
+vertices = PackedVector2Array(1140.0078, 634.9922, 8, 634, 8, 22.648438, 46.757813, 16.992188, 1140.9766, 15.0078125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(46, 7, 1151, 5, 1150, 645, -2, 644, -2, 14)])
 
 [node name="Harta Main" type="Node2D"]
+script = ExtResource("1_jcr15")
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_04uk7")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 463.0
-offset_top = 26.0
-offset_right = 631.0
-offset_bottom = 49.0
-grow_horizontal = 2
-text = "Amalia, tu esti asta :D"
-label_settings = SubResource("LabelSettings_k1fc8")
-horizontal_alignment = 1
+[node name="Icon" type="Sprite2D" parent="NavigationRegion2D"]
+position = Vector2(191, 506)
+texture = ExtResource("2_tb5nx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NavigationRegion2D/Icon"]
+
+[node name="Icon2" type="Sprite2D" parent="NavigationRegion2D"]
+modulate = Color(0.23753911, 0.23753914, 0.23753911, 1)
+position = Vector2(917, 262)
+texture = ExtResource("2_tb5nx")

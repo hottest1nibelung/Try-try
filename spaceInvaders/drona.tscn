@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cy4xnppapy3t"]
+[gd_scene load_steps=35 format=3 uid="uid://cy4xnppapy3t"]
 
 [ext_resource type="Texture2D" uid="uid://4c0yj8kphurm" path="res://spaceInvaders/Drone.png" id="1_236js"]
 [ext_resource type="Script" uid="uid://bn75awoucarmd" path="res://spaceInvaders/drona.gd" id="1_tujvd"]
@@ -83,6 +83,22 @@ region = Rect2(960, 96, 96, 96)
 atlas = ExtResource("1_236js")
 region = Rect2(1056, 96, 96, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tujvd"]
+atlas = ExtResource("1_236js")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ronmi"]
+atlas = ExtResource("1_236js")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh7dl"]
+atlas = ExtResource("1_236js")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrxwu"]
+atlas = ExtResource("1_236js")
+region = Rect2(288, 96, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrsh0"]
 atlas = ExtResource("1_236js")
 region = Rect2(0, 384, 96, 96)
@@ -136,7 +152,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -181,6 +197,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tujvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ronmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh7dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrxwu")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yrsh0")
 }, {
 "duration": 1.0,
@@ -213,12 +246,13 @@ script = ExtResource("1_tujvd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -0.99999994)
 sprite_frames = SubResource("SpriteFrames_5ceei")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.18737966
+frame = 7
+frame_progress = 1.0
 offset = Vector2(-50, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-3, -2.0000002)
+position = Vector2(-50, -2.0000024)
 shape = SubResource("CircleShape2D_tujvd")

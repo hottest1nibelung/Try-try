@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7m0dqdhtj0rh"]
+[gd_scene load_steps=6 format=3 uid="uid://b7m0dqdhtj0rh"]
 
 [ext_resource type="Texture2D" uid="uid://jtgan7qnw81p" path="res://casa main(ferma)_assets/Robot_chatGPT.png" id="1_ii7h6"]
+[ext_resource type="Script" uid="uid://cvxfocluvucgp" path="res://scripts/robot_npc.gd" id="1_u6xhc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6xhc"]
 atlas = ExtResource("1_ii7h6")
@@ -22,6 +23,7 @@ size = Vector2(388.57172, 207.14308)
 
 [node name="Robot_NPC" type="StaticBody2D"]
 scale = Vector2(0.35, 0.35)
+script = ExtResource("1_u6xhc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y5rad")

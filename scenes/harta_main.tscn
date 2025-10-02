@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxe6xcp582ycg"]
+[gd_scene load_steps=9 format=3 uid="uid://dxe6xcp582ycg"]
 
 [ext_resource type="Script" uid="uid://dgf8jci3l1tpq" path="res://scripts/harta_main.gd" id="1_jcr15"]
 [ext_resource type="PackedScene" uid="uid://b7m0dqdhtj0rh" path="res://scenes/robot_npc.tscn" id="2_tb5nx"]
 [ext_resource type="PackedScene" uid="uid://djxdtp2xaqw6w" path="res://scenes/player.tscn" id="3_04uk7"]
 [ext_resource type="Texture2D" uid="uid://kswbg1cljubv" path="res://casa main(ferma)_assets/house.png" id="4_04uk7"]
+[ext_resource type="Script" uid="uid://csxqeqduti4fp" path="res://scripts/robot_npc1.gd" id="5_fsv70"]
 [ext_resource type="PackedScene" uid="uid://6xip8uxt3x41" path="res://scenes/chat.tscn" id="5_qwfb2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_04uk7"]
@@ -20,9 +21,6 @@ script = ExtResource("1_jcr15")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-7, -7)
 navigation_polygon = SubResource("NavigationPolygon_04uk7")
-
-[node name="Robot_NPC" parent="." instance=ExtResource("2_tb5nx")]
-position = Vector2(872, 154)
 
 [node name="EnvironmentalObjects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -50,4 +48,9 @@ position = Vector2(551, 437)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_qwfb2")
 
+[node name="Robot_NPC1" parent="EnvironmentalObjects" instance=ExtResource("2_tb5nx")]
+position = Vector2(872, 154)
+script = ExtResource("5_fsv70")
+
 [node name="Chat" parent="." instance=ExtResource("5_qwfb2")]
+metadata/_edit_use_anchors_ = true

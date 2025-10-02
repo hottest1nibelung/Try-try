@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var player: Node2D = $EnvironmentalObjects
+@onready var player: Node2D = $EnvironmentalObjects/Player
 @onready var agent: NavigationAgent2D = $EnvironmentalObjects/Player/NavigationAgent2D
-@onready var target: Node2D = $Robot_NPC
+@onready var target: Node2D = $EnvironmentalObjects/Robot_NPC
 @onready var dot_scene: PackedScene = load("res://dot/dot.tscn")
 const DISTANCE_TO_TARGET = 50
 

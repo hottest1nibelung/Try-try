@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://bl0mbm60qqtws"]
+
+[ext_resource type="Texture2D" uid="uid://4c0yj8kphurm" path="res://spaceInvaders/Drone.png" id="1_rmvwh"]
+[ext_resource type="Script" uid="uid://0y3c5sflcbmp" path="res://spaceInvaders/laser.gd" id="1_scpo6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scpo6"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(864, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq0ck"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(960, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0omv4"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(1056, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p16bu"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(1152, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7l5n"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(1248, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3trya"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(1344, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uvyf"]
+atlas = ExtResource("1_rmvwh")
+region = Rect2(768, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4xcbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scpo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq0ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0omv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p16bu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7l5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3trya")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uvyf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mximq"]
+size = Vector2(3, 22)
+
+[node name="Laser" type="Area2D"]
+rotation = -1.5707964
+script = ExtResource("1_scpo6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1.9999999)
+sprite_frames = SubResource("SpriteFrames_4xcbn")
+animation = &"idle"
+frame_progress = 0.5359064
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_mximq")

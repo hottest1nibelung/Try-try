@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyn0rjpnu86f6"]
+
+[ext_resource type="PackedScene" uid="uid://cy4xnppapy3t" path="res://spaceInvaders/drona.tscn" id="1_7wnc2"]
+
+[node name="level0" type="Node2D"]
+
+[node name="Drona" parent="." instance=ExtResource("1_7wnc2")]
+position = Vector2(577, 565)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(595, -249)
